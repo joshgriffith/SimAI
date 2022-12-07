@@ -1,0 +1,61 @@
+﻿Approaches to solving:  "count how many times I click the left mouse button over the next 5 seconds"
+
+
+A) Access event log in 5 seconds
+Scheduler -> in 5 seconds -> count(getEvents('left click').since(getTime()));
+
+OR
+
+B) Create watcher for 5 seconds
+watch('left click').schedule('5 seconds').stopWatch('left click').count(getEvents('left click').since(getTime()));
+
+
+
+in('5 seconds')
+
+
+{ in: "count how many times I click the left mouse button over the next 5 seconds", out: "count('how many times I click the left mouse button')" }
+
+
+
+Methods are verbs, parameters are methods or subjects / nouns / adjectives / qualifiers
+
+{ in: "what time is it?", out: "get('time');" }
+{ in: "go to the store after you wash the dishes", out: "wash('dishes'); go('the store');" }
+{ in: "when you see a red square, email me", out: "see('red square'); email('me');" }
+{ in: "restart the computer at 3 pm", out: "at('3 pm'); restart('the computer');" }
+{ in: "click submit after you sign the document", out: "sign('the document'); click('submit');" }
+{ in: "add age as hours to the current time", out: "add(get('age as hours'), get('time'));" }
+{ in: "count the people that live in the sunshine state", out: "count(get('people that live in the sunshine state'));" }
+
+VERSUS
+
+{ in: "what time is it?", out: "get('time')" }
+{ in: "go to the store after you wash the dishes", out: "wash('dishes').go('the store')" }
+{ in: "when you see a red square, email me", out: "see('red square').email('me')" }
+{ in: "restart the computer at 3 pm", out: "at('3 pm').restart('the computer')" }
+{ in: "click submit after you sign the document", out: "sign('the document').click('submit')" }
+{ in: "add age as hours to the current time", out: "add(get('age as hours'), get('time'))" }
+{ in: "count the people that live in the sunshine state", out: "count(get('people that live in the sunshine state'))" }
+{ in: "set the clock to 10:57 pm", out: "set('clock', '10:57 pm')" }
+{ in: "count how many times I click the left mouse button over the next 5 seconds", out: "count(click('left mouse button').over('next 5 seconds'))" }
+
+
+Perhaps a 'watcher' is composed of a 'trigger' and a 'stop condition'
+count(watch('click left mouse button', schedule('5 seconds')))
+count(for('5 seconds').watch('click left mouse button'))
+
+
+Standford raw dependency tree:
+"US unveils world's most powerful supercomputer, beats China" = "beats(unveils('US', 'world's most powerful supercomputer'), get('China'))"
+
+
+
+{ in: "what time is it?", out: "get 'time'" }
+{ in: "go to the store after you wash the dishes", out: "(wash 'dishes') (go 'the store')" }
+{ in: "when you see a red square, email me", out: "when (see 'a red square') (email 'me')" }
+{ in: "restart the computer at 3 pm", out: "when '3 pm' (restart 'the computer')" }
+{ in: "click submit after you sign the document", out: "(sign 'the document') (click 'submit')" }
+{ in: "count the people that live in the sunshine state", out: "count (people (live 'in the sunshine state'))" }
+{ in: "set the clock to 10:57 pm", out: "set 'clock' '10:57 pm'" }
+{ in: "move the mouse to the top right corner", out: "move 'mouse' 'top right corner'" }

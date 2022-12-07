@@ -1,0 +1,46 @@
+﻿Count the files in c:/code
+
+When you see a red square on my screen, send me an email with a screenshot of it.  (ambiguous:  screenshot)
+
+How many capitalized words are in c:/foo.txt?  (ambiguous:  read file versus read 'c:/foo.txt' literal)
+
+Count how many times I click my mouse over the next 10 seconds
+
+Make me a list of all the telecommute jobs on Craigslist.  Make sure you do not access more than one page every 5 seconds
+
+Send me an email of a cat (somewhat ambiguous)
+
+Where are most of my songs stored?
+
+
+
+{ In = "5 - 4 * 90", Out = "multiply(4, 90).subtract(5, 4)" }
+{ In = "restart the computer at 3 pm", Out = "at('3 pm').restart('computer')" }
+{ In = "a woman is a human", Out = "is('woman', 'human')" }
+{ In = "click submit after you sign the document", Out = "sign('document').click('submit')" }
+{ In = "text me a list of your favorite foods", Out = "text('me', get('favorite foods'))" }
+{ In = "i have 2 marbles in one hand and 3 marbles in the other hand, how many marbles do i have", Out = "add(2, 3)" }
+{ In = "i need you to skip dinner and then head over to the airport in Frederick after you do my laundry", Out = "skip('dinner').do('my laundry').go('airport in Frederick')" }
+{ In = "draw me a red square when you see the cat jump", Out = "when('cat jump').draw('red square')" }
+{ In = "write up a business proposal to solve the weather fluctuations", Out = "write('business proposal').solve('weather fluctuations')" }
+
+
+
+{ In = "restart the computer at 3 pm", Out = "at(3 pm).restart(computer)" }
+{ In = "a woman is a human", Out = "is(woman, human)" }
+{ In = "click submit after you sign the document", Out = "sign(document).click(submit)" }
+{ In = "text me a list of your favorite foods", Out = "text(me, favorite foods)" }
+{ In = "i have 2 marbles in one hand and 3 marbles in the other hand, how many marbles do i have", Out = "add(2, 3)" }
+{ In = "i need you to skip dinner and then head over to the airport in Frederick after you do my laundry", Out = "skip(dinner).do(my laundry).go(airport in Frederick)" }
+{ In = "draw me a red square when you see the cat jump", Out = "when(cat jump).draw(red square)" }
+{ In = "email Elyssa regarding our plans this evening", Out = "email(Elyssa, our plans this evening)" }
+
+
+{ In = "restart the computer at 3 pm", Out = "if(3 pm) computer.restart()" }
+{ In = "click submit after you sign the document", Out = "document.sign() document.click(submit)" }
+{ In = "text me a list of your favorite foods", Out = "phone.text(favorite foods)" }
+{ In = "i have 2 marbles in one hand and 3 marbles in the other hand, how many marbles do i have", Out = "add(2, 3)" }
+{ In = "i need you to skip dinner and then head over to the airport in Frederick after you do my laundry", Out = "skip(dinner).do(laundry(my)).go(airport(in Frederick))" }
+{ In = "draw me a red square when you see the cat jump", Out = "when(cat jump).draw(square(red))" }
+{ In = "email Elyssa regarding our plans this evening", Out = "email(Elyssa, our plans this evening)" }
+{ In = "move the mouse cursor in the shape of a square", Out = "move(cursor(mouse), shape(square))" }

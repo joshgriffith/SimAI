@@ -1,0 +1,20 @@
+﻿Intent splitter / dispatcher:
+
+Wash the dishes, then go to the store:  (wash the dishes) (go to the store)
+
+memory tokenizer:  Skill to tokenize prompt for storage / long-term memory
+
+dispatcher skill chain:
+
+  dispatch(wash(dishes), go(store))
+  dispatch(wash the dishes, go to the store)
+
+
+
+  Transform prompt all at once:
+  wash(dishes).go(store)
+
+  Transform skips (Azure LUIS way):
+  1. Dispatcher 'skill' splits into two intents
+  2. Each intent is computed separately and then combined
+  3. Dispatcher orchestrates
